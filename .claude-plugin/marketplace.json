@@ -1,0 +1,22 @@
+{
+  "name": "ui-ux-ultra-max-skill",
+  "owner": {
+    "name": "Rishabh Yadav",
+    "url": "https://github.com/rishabhyadav0807"
+  },
+  "metadata": {
+    "description": "UI/UX Ultra Max: a senior product-designer skill for Claude Code.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ui-ux-ultra-max-skill",
+      "source": "./",
+      "description": "Persona-first UX and UI design: named UX laws and psychology, rendered screens, and an independent review council before hand-over.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "keywords": ["ui", "ux", "design", "persona", "ux-laws", "accessibility"],
+      "category": "design"
+    }
+  ]
+}

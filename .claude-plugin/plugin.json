@@ -1,0 +1,13 @@
+{
+  "name": "ui-ux-ultra-max-skill",
+  "version": "1.0.0",
+  "description": "Senior product-designer workflow for UX and UI: persona first, 5–8 named UX laws and psychology principles, real rendered screens, and an independent review council before hand-over.",
+  "author": {
+    "name": "Rishabh Yadav",
+    "url": "https://github.com/rishabhyadav0807"
+  },
+  "homepage": "https://github.com/rishabhyadav0807/ui-ux-ultra-max-skill",
+  "repository": "https://github.com/rishabhyadav0807/ui-ux-ultra-max-skill",
+  "license": "MIT",
+  "keywords": ["ui", "ux", "design", "persona", "ux-laws", "accessibility", "design-review", "claude-code", "skill"]
+}

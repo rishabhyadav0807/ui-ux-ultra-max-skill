@@ -1,0 +1,12 @@
+{
+  "name": "ui-ux-ultra-max-skill",
+  "version": "1.0.0",
+  "description": "Senior product-designer workflow for UX and UI: persona first, 5–8 named UX laws and psychology principles, real rendered screens, and an independent review council before hand-over.",
+  "entry": "skills/ui-ux-ultra-max-skill/SKILL.md",
+  "license": "MIT",
+  "repository": "https://github.com/rishabhyadav0807/ui-ux-ultra-max-skill",
+  "platforms": ["claude-code"],
+  "optional": {
+    "ui-ux-pro-max": "Correctness checks and stack rules (contrast, targets, per-stack guidance). Used when installed; built-in WCAG checks otherwise."
+  }
+}
