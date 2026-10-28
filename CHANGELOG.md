@@ -2,6 +2,13 @@
 
 All notable changes to this skill are listed here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## 1.0.1 (2026-10-28)
+
+- Renamed to `ui-ux-ultra-max-skill` everywhere (repo, plugin, marketplace, skill folder).
+- Skill description rewritten as trigger conditions only, so Claude loads it at the right moments; the "what it does" summary moved to the plugin and README.
+- README: before-and-after example, comparison with ui-ux-pro-max, install notes for other agents, prerequisites.
+- Added CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue and pull request templates, and a CI check for version and frontmatter consistency.
+
 ## 1.0.0 (2026-10-28)
 
 First public release.

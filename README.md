@@ -1,14 +1,40 @@
+<div align="center">
+
 # UI/UX Ultra Max
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-orange)](https://docs.claude.com/en/docs/claude-code/skills)
-![References](https://img.shields.io/badge/references-12-purple)
-![Review council](https://img.shields.io/badge/review%20council-6%20members-red)
+**Make Claude design like a senior product designer, not a template.**
 
-A Claude Code skill that makes Claude design like a senior product designer at Apple, Google, Wise or Airbnb.
+A persona-first Claude Code skill: real users, named UX laws, rendered screens with every state, and an independent review council that has to pass the work before you see it.
+
+<a href="https://github.com/rishabhyadav0807/ui-ux-ultra-max-skill/releases"><img src="https://img.shields.io/github/v/release/rishabhyadav0807/ui-ux-ultra-max-skill?style=for-the-badge&color=blue" alt="Release"></a>
+<img src="https://img.shields.io/badge/references-12-purple?style=for-the-badge" alt="12 references">
+<img src="https://img.shields.io/badge/review_council-6_members-red?style=for-the-badge" alt="6-member review council">
+<a href="LICENSE"><img src="https://img.shields.io/github/license/rishabhyadav0807/ui-ux-ultra-max-skill?style=for-the-badge&color=green" alt="MIT license"></a>
+<br>
+<a href="https://docs.claude.com/en/docs/claude-code/skills"><img src="https://img.shields.io/badge/Claude_Code-skill_%2B_plugin-orange?style=flat-square" alt="Claude Code skill and plugin"></a>
+<a href="https://github.com/rishabhyadav0807/ui-ux-ultra-max-skill/stargazers"><img src="https://img.shields.io/github/stars/rishabhyadav0807/ui-ux-ultra-max-skill?style=flat-square&logo=github" alt="GitHub stars"></a>
+
+[Install](#install) · [Usage](#usage) · [How it works](#how-it-works) · [Example](#before-and-after) · [Contributing](CONTRIBUTING.md)
+
+</div>
+
+## Why
 
 Most AI-made design looks the same because defaults decide it: the kit's components, the category's colours, the template's layout. This skill replaces defaults with reasons. **The persona decides which principles matter, and every visible decision traces back to the persona or a named principle.**
+
+## Before and after
+
+Same prompt: *"I run a bakery and want an app for orders. It should look good."*
+
+| Without the skill | With UI/UX Ultra Max |
+|---|---|
+| A generic food-delivery layout: hero banner, card grid, a purple-to-pink gradient | Starts from one person: a regular who orders the same thing every Friday and hates re-typing it |
+| "Clean, modern, intuitive" with no reason behind any choice | Five named principles, e.g. *Hick's law: because Fridays are a repeat order → one "Order my usual" button above the menu* |
+| Happy path only | Empty, loading, error, sold-out and "shop closed" states built |
+| Unchecked contrast and tap sizes | Contrast computed from hex values, 44px targets, and a council pass before hand-over |
+| A screen | A screen plus a short rationale that teaches you why it works |
+
+*Illustrative and abridged. Real runs show the persona and flow for you to confirm before any screens are built.*
 
 ## What it does
 
@@ -46,6 +72,14 @@ cp -R ui-ux-ultra-max-skill/skills/ui-ux-ultra-max-skill .claude/skills/
 ```
 
 Restart Claude Code after installing. The skill loads by itself when you ask for design work. You can also call it with `/ui-ux-ultra-max-skill`.
+
+### Other agents
+
+The skill is a standard `SKILL.md` folder. Agents that read that format (for example Codex CLI, through `~/.agents/skills/`) can load it from a copy of `skills/ui-ux-ultra-max-skill`. It is built and tested in Claude Code; on other agents, steps that render screens or start reviewer agents may need adapting.
+
+### Prerequisites
+
+None. A browser or headless Chrome helps the skill look at its own rendered screens; without one it lists those checks under "Not checked".
 
 ### Optional companion
 
@@ -91,6 +125,18 @@ A full run goes through these steps:
 
 Fixed priority rules: persona beats the average law, accessibility beats aesthetics, ethics beats conversion, convention beats novelty (except at the signature moment), and clarity beats delight in high-stakes moments.
 
+## Compared with ui-ux-pro-max
+
+They do different jobs and work well together.
+
+| | UI/UX Ultra Max | [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
+|---|---|---|
+| Starts from | A persona and their stakes | Product type and stack |
+| Gives you | A designed flow and screens, with the reason for each decision | Searchable styles, palettes, font pairings and stack rules |
+| Taste comes from | The feel statement and signature moment | Curated presets |
+| Checks | Independent 6-member review council, computed contrast | Rule lists and checklists |
+| Best for | Deciding *what* to build and *why*, then building it | Looking up *how* to style and implement it correctly |
+
 ## What's inside
 
 ```text
@@ -117,7 +163,7 @@ This repo uses [Semantic Versioning](https://semver.org/). The version is kept i
 
 ## Contributing
 
-Issues and pull requests are welcome. Keep each reference focused on *when* a principle applies and *what decision it drives*, not on reciting theory. If you change the process in `SKILL.md`, update the README's "How it works" section in the same pull request.
+Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first. Please report security problems as described in [SECURITY.md](SECURITY.md).
 
 ## License
 

@@ -1,0 +1,16 @@
+name: Idea or new principle
+description: Suggest a principle, pattern, state or check the skill should know.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: Write it as "because <user trait or moment> → <design decision>".
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Where it would have helped
+      description: A prompt or real case where the skill missed this.

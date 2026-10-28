@@ -1,0 +1,30 @@
+name: Bad design output
+description: The skill ran but the result was generic, wrong for the user, inaccessible or unethical.
+labels: [output-quality]
+body:
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Your prompt
+      description: What you asked for, and the input you gave (brief, screenshot, repo).
+    validations:
+      required: true
+  - type: dropdown
+    id: run
+    attributes:
+      label: Run size
+      options: [Full run, Critique, Light run, Principle question, Not sure]
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What went wrong
+      description: The decision that was wrong and why. Screenshots help.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Skill version and agent
+      placeholder: 1.0.1 on Claude Code 2.x
