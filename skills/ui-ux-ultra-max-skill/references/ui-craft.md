@@ -78,6 +78,7 @@ Each important screen has: **ideal · empty (first use, no results, cleared) · 
 - Write the way the persona speaks; use their nouns. Sentence case. Cut every word that doesn't help.
 - Errors: what happened + why + how to fix, without blame. "That IFSC doesn't match a branch. Check the last 6 characters." Not "Invalid input".
 - Empty states: value plus action. Confirmations: say exactly what will happen ("Ravi will get it by 6 pm").
+- An assistant, chat or AI answer opens with a 2–3 line plain-language summary in the persona's words, then the evidence. Small talk gets a plain reply.
 - Voice stays constant; tone flexes with the moment (playful on success, calm on errors, serious on money).
 
 ## 10. Motion

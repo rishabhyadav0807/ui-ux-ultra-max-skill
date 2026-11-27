@@ -39,7 +39,7 @@ Record the tokens where the medium keeps them (CSS custom properties, the projec
 ## HTML mockup
 
 - One self-contained file: inline CSS, CSS custom properties for the tokens, Google Fonts if needed, no build step. Mobile personas: render inside a 390×844 frame; web: responsive from 360px.
-- Show every key screen of the flow side by side (or as sections), plus the key states for the signature screen.
+- Show every key screen of the flow side by side (or as sections), plus the key states for the signature screen. Give each screen's root element `data-screen="<screen / state>"`, so `scripts/audit.sh` can check it at 360px and each screen can be screenshotted on its own.
 - Real content and data in the persona's language. Under each screen, a one-line caption giving the screen's job and the principle behind it (this teaches the reader).
 - Save to the project's `design/` folder if in a project, otherwise the session scratchpad. Look at it rendered before hand-over: Claude in Chrome, or a headless screenshot you then view:
   `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --screenshot=<out.png> --window-size=1400,1000 file://<file.html>`

@@ -1,7 +1,7 @@
 {
   "name": "ui-ux-ultra-max-skill",
-  "version": "1.0.1",
-  "description": "Makes Claude design like a senior product designer: a real persona, 5–8 named UX laws and psychology principles, rendered screens with every state, and an independent 6-member review council before hand-over. Works for non-designers too.",
+  "version": "1.1.0",
+  "description": "Makes Claude design like a senior product designer: a real persona, 5–8 named UX laws and psychology principles, rendered screens with every state, and automated accessibility checks, and an independent 3-member review council before hand-over. Works for non-designers too.",
   "entry": "skills/ui-ux-ultra-max-skill/SKILL.md",
   "license": "MIT",
   "repository": "https://github.com/rishabhyadav0807/ui-ux-ultra-max-skill",
@@ -9,6 +9,6 @@
     "claude-code"
   ],
   "optional": {
-    "ui-ux-pro-max": "Correctness checks and stack rules (contrast, targets, per-stack guidance). Used when installed; built-in WCAG checks otherwise."
+    "ui-ux-pro-max": "Correctness checks and stack rules (per-stack guidance, pre-delivery checklist). Used when installed; built-in WCAG checks and scripts/audit.sh otherwise."
   }
 }

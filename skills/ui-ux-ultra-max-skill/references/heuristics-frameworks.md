@@ -48,6 +48,6 @@ Innovative · useful · aesthetic · understandable · unobtrusive · honest · 
 - **Material 3:** 48×48dp targets, dynamic colour roles (primary, secondary, tertiary, surface containers), elevation via tonal surfaces, FAB for the primary action, predictive back, motion that shows spatial relationships.
 - **Web:** visible focus states, keyboard navigation, links that look like links, the browser back button works, URL reflects state, no hover-only meaning.
 
-## Accessibility (non-negotiable; ui-ux-pro-max checks the detail)
+## Accessibility (non-negotiable; ui-ux-pro-max, if installed, checks the detail)
 
 WCAG 2.2 AA: 4.5:1 text contrast (3:1 for large text and UI), targets at least 24px (aim 44/48), never colour alone for meaning, labels on inputs, focus visible and not obscured, reduced-motion support, screen-reader names and roles, no time limits without extension, accessible authentication (no puzzles), dragging has a single-pointer alternative. Inclusive design: **solve for one, extend to many.**

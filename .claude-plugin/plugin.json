@@ -1,7 +1,7 @@
 {
   "name": "ui-ux-ultra-max-skill",
-  "version": "1.0.1",
-  "description": "Makes Claude design like a senior product designer: a real persona, 5–8 named UX laws and psychology principles, rendered screens with every state, and an independent 6-member review council before hand-over. Works for non-designers too.",
+  "version": "1.1.0",
+  "description": "Makes Claude design like a senior product designer: a real persona, 5–8 named UX laws and psychology principles, rendered screens with every state, and automated accessibility checks, and an independent 3-member review council before hand-over. Works for non-designers too.",
   "author": {
     "name": "Rishabh Yadav",
     "url": "https://github.com/rishabhyadav0807"

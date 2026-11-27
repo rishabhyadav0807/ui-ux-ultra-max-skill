@@ -4,11 +4,11 @@
 
 **Make Claude design like a senior product designer, not a template.**
 
-Persona-driven UX and UI design, grounded in named UX laws, rendered as real screens with every state, and approved by an independent six-member review council before you see it.
+Persona-driven UX and UI design, grounded in named UX laws, rendered as real screens with every state, checked by a contrast and layout audit script, and approved by an independent three-member review council before you see it.
 
 <a href="https://github.com/rishabhyadav0807/ui-ux-ultra-max-skill/releases"><img src="https://img.shields.io/github/v/release/rishabhyadav0807/ui-ux-ultra-max-skill?style=for-the-badge&color=blue" alt="Release"></a>
-<img src="https://img.shields.io/badge/references-12-purple?style=for-the-badge" alt="12 references">
-<img src="https://img.shields.io/badge/review_council-6_members-red?style=for-the-badge" alt="6-member review council">
+<img src="https://img.shields.io/badge/references-14-purple?style=for-the-badge" alt="14 references">
+<img src="https://img.shields.io/badge/review_council-3_members-red?style=for-the-badge" alt="3-member review council">
 <a href="LICENSE"><img src="https://img.shields.io/github/license/rishabhyadav0807/ui-ux-ultra-max-skill?style=for-the-badge&color=green" alt="MIT license"></a>
 <br>
 <a href="https://docs.claude.com/en/docs/claude-code/skills"><img src="https://img.shields.io/badge/Claude_Code-skill_%2B_plugin-orange?style=flat-square" alt="Claude Code skill and plugin"></a>
@@ -35,8 +35,8 @@ Every full design run hands you:
 | **User flow** | Every step with its goal, main action and failure points, including unhappy paths, trust moments and returning visits. |
 | **Design tokens** | Colour, typography, spacing, radius and motion, derived from a written "feel" statement, or reused from your existing design system. |
 | **Rendered screens** | Real screens in your codebase, HTML, Penpot or Figma, with loading, empty, error and offline states, tested at 360px wide. |
-| **Accessibility check** | WCAG 2.2 contrast computed from the actual colour values, touch targets of at least 44px, and no information carried by colour alone. |
-| **Independent design review** | Six reviewers (persona stand-in, craft, accessibility, states, ethics, brief) who must all pass the design. Their verdicts are included. |
+| **Accessibility check** | A script measures WCAG 2.2 contrast from the rendered colours, touch targets of at least 44px, overflow at 360px and buttons touching container edges. Reviewers check that colour never carries meaning alone. |
+| **Independent design review** | Three reviewers (user and brief, craft and layout, states and ethics) who must all pass the design. Their verdicts are included. |
 | **Design rationale** | A short explanation linking each decision to the persona and the principle behind it, plus a list of what could not be verified. |
 
 It also handles **design critiques** (a ranked fix list with the principle behind each fix), **small fixes** (one screen or component), and **UX questions** ("which law applies here?", "is this a dark pattern?").
@@ -94,11 +94,11 @@ The skill is a standard `SKILL.md` folder. Agents that read that format (for exa
 
 ### Prerequisites
 
-None. A browser or headless Chrome helps the skill look at its own rendered screens; without one it lists those checks under "Not checked".
+None. Chrome or Chromium lets the skill look at its rendered screens and run its audit script (set `CHROME` if the browser is not in a standard place). Without one, it lists those checks under "Not checked".
 
 ### Optional companion
 
-If [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) is installed, this skill uses it for **correctness only**: contrast, target sizes and per-stack rules. Taste always comes from the persona and the feel statement, never from a preset palette. Without it, the skill falls back to built-in WCAG 2.2 checks.
+If [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) is installed, this skill uses it for **correctness only**: per-stack rules and its pre-delivery checklist. Taste always comes from the persona and the feel statement, never from a preset palette. Without it, the skill falls back to built-in WCAG 2.2 checks and its own audit script.
 
 ## Usage
 
@@ -146,23 +146,24 @@ If the request has no design vocabulary (for example "I run a bakery and need an
    > **Checkpoint:** you confirm the persona and flow before any screen is built. A wrong persona makes every screen wrong.
 7. **Set tokens and medium.** Tokens come from the feel statement, or from your existing design system first. The medium is your codebase, HTML, Penpot or Figma.
 8. **Build the screens** in a fixed order: hierarchy, type, space, colour, depth, icons, components, states, microcopy, motion, data, polish. Loading, empty, error and offline states are always built, plus any state the persona makes likely.
-9. **Review.** The skill renders and inspects its own output and computes contrast from the hex values. Then the **review council** runs.
+9. **Review.** The skill renders and inspects its own output, then runs an audit script for contrast, target size and 360px layout. Then the **review council** runs.
 10. **Hand over** the screens with a rationale and a list of what could not be verified.
 
 ### 3. The independent review council
 
-The builder never approves its own work. Six reviewers receive only the brief, the persona and the screenshots, not the builder's reasoning, so they judge the result rather than agree with it.
+The builder never approves its own work. First, `scripts/audit.sh` measures contrast (4.5:1, or 3:1 for large text), 44px targets, overflow at 360px and buttons touching container edges, so no reviewer spends tokens on what a script can measure. Then three reviewers receive the brief, the persona and only the screenshots their checklist needs, not the builder's reasoning, so they judge the result rather than agree with it.
 
 | Reviewer | Checks |
 |---|---|
-| **Persona stand-in** | Can this user finish the main task on the first try, in their own words? |
-| **Craft critic** | One focal point per screen, a consistent type and spacing scale, no generic-design tells |
-| **Layout and accessibility auditor** | Contrast of at least 4.5:1, targets of at least 44px, clean wrapping at 360px, colour never the only signal |
-| **States auditor** | Loading, empty, error, offline, progress and payment states present and useful |
-| **Ethics reviewer** | No dark patterns: confirm-shaming, fake urgency, pre-ticked consent, hidden costs or invented promises |
-| **Brief keeper** | Everything requested is delivered, existing features are accounted for, assumptions are written down |
+| **User and brief** | Can this user finish the main task on the first try, in their own words? Is everything requested delivered, every existing feature accounted for, every assumption written down? |
+| **Craft and layout** | One focal point per screen, a consistent type and spacing scale, no generic-design tells, colour never the only signal |
+| **States and ethics** | Loading, empty, error, offline, progress and payment states present and useful; no dark patterns, fake urgency, hidden costs or invented promises |
 
-Each reviewer returns PASS or FAIL with a concrete fix. The design is revised for up to three rounds, then re-checked by all six together. Anything unresolved is reported openly, never hidden.
+Each reviewer returns PASS or FAIL with a concrete fix. The design is revised for up to two rounds; each re-check sends only the changed screens to the reviewers that failed. A final audit and a re-check of anything changed after it passed come before hand-over. Anything unresolved is reported openly, never hidden.
+
+### Token use
+
+The council is the most expensive part of a run because reviewers read images. To keep it lean, each reviewer sees only its own screens, measurable checks run as a script, re-checks send only what changed, and the two checklist-style reviewers can run on a cheaper model. References load only at the step that needs them.
 
 ### 4. How conflicts are resolved
 
@@ -185,7 +186,7 @@ They do different jobs and work well together.
 | Starts from | A persona and their stakes | Product type and stack |
 | Gives you | A designed flow and screens, with the reason for each decision | Searchable styles, palettes, font pairings and stack rules |
 | Taste comes from | The feel statement and signature moment | Curated presets |
-| Checks | Independent 6-member review council, computed contrast | Rule lists and checklists |
+| Checks | Independent 3-member review council, audit script for contrast and layout | Rule lists and checklists |
 | Best for | Deciding *what* to build and *why*, then building it | Looking up *how* to style and implement it correctly |
 
 ## What's inside
@@ -193,7 +194,12 @@ They do different jobs and work well together.
 ```text
 skills/ui-ux-ultra-max-skill/
 ├── SKILL.md                      # the process, run sizes, output contract, rules
+├── scripts/
+│   ├── audit.js                  # in-page contrast, target, overflow and edge checks at 360px
+│   └── audit.sh                  # runs audit.js on an HTML mockup in headless Chrome
 └── references/
+    ├── plain-language.md         # how to work with someone who is not a designer
+    ├── structure.md              # redesign inventory, navigation, peers, names, progress states
     ├── persona.md                # persona card, inferring from thin input, trait → decision map
     ├── taste-signature.md        # feel statement, signature moment, generic-design tells
     ├── principle-selector.md     # which principles for which persona trait and screen moment
@@ -205,7 +211,7 @@ skills/ui-ux-ultra-max-skill/
     ├── mediums.md                # repo code, HTML mockups, Penpot, Figma; tokens first
     ├── ui-craft.md               # hierarchy → type → space → colour → … → polish
     ├── critique.md               # review order, critique format, self-critique gate
-    └── council.md                # the six reviewers, their checklists and the loop
+    └── council.md                # audit script, the three reviewers, their checklists and the loop
 ```
 
 ## FAQ
@@ -250,4 +256,4 @@ Issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) fi
 
 [MIT](LICENSE) © 2026 [Rishabh Yadav](https://github.com/rishabhyadav0807)
 
-*Last updated: 29 October 2026*
+*Last updated: 27 November 2026*

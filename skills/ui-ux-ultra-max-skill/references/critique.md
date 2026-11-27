@@ -13,7 +13,7 @@ For a critique, have open `principle-selector.md` (the row for this screen's mom
 5. **Heuristics:** quick pass through Nielsen's 10.
 6. **Craft:** type scale, spacing scale, alignment axes, colour roles, states, microcopy, motion (ui-craft.md, sections 1–12).
 7. **Taste:** generic-design tells and the five generic tests (taste-signature.md). Does the product have a signature moment? If not, name the moment that should become one.
-8. **Accessibility and correctness:** run the ui-ux-pro-max pre-delivery checks (contrast, targets, focus, labels, reduced motion), or the WCAG list in heuristics-frameworks.md if it's unavailable.
+8. **Accessibility and correctness:** for your own HTML or web build, run `scripts/audit.sh` (see council.md). Then run the ui-ux-pro-max pre-delivery checks (contrast, targets, focus, labels, reduced motion), or the WCAG list in heuristics-frameworks.md if it's unavailable.
 9. **Ethics:** dark-pattern scan (psychology-persuasion.md).
 
 ## Critique output format (for reviewing someone else's design)
